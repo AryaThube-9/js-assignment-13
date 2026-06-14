@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .gallery-image {
+        height: 400px;
+        width: 400px;
+    }
+    .arrow-btn {
+        font-size: 25px;
+        padding: 8px 15px;
+        cursor: pointer;
+        border-radius: 10px;
+        background-color: lightblue;
+        border: none;
+        width: 90px;
+        margin-left: 50px;
+    }
+</style>
+<body>
+    <div class="img-container">
+        <img src="./images/img1.jpg" alt="image1" class="gallery-image" id="gallery">
+        <br><br>
+        <button onclick="previous()" class="arrow-btn">
+            << /button>
+                <button onclick="next()" class="arrow-btn">></button>
+    </div>
+    <script>
+        const images = [
+            "./images/img1.jpg",
+            "./images/img2.jpg",
+            "./images/img3.jpg",
+            "./images/img4.jpg",
+            "./images/img5.jpg",
+            "./images/img6.jpg",
+            "./images/img7.jpg",
+            "./images/img8.jpg",
+            "./images/img9.jpg"
+        ]
+
+        let imageIndex = 0;
+
+        const imageElement = document.getElementById("gallery");
+        function next() {
+
+            // Full Code For next image
+
+            // if (imageIndex == images.length - 1) {
+            //     imageIndex = 0;
+            // }
+            // else {
+            //     imageIndex++;
+            // }
+            // imageElement.src = images[imageIndex];
+
+            // Optimized code:
+
+            imageIndex == images.length - 1 ? imageIndex = 0 : imageIndex++;
+
+            imageElement.src = images[imageIndex];
+
+        }
+
+        function previous() {
+            // Full Code For previous image
+
+            // if (imageIndex == 0) {
+            //     imageIndex = images.length - 1;
+            // }
+            // else {
+            //     imageIndex--;
+            // }
+
+            // imageElement.src = images[imageIndex];
+
+            // Optimized code:
+
+            imageIndex == 0 ? imageIndex = images.length - 1 : imageIndex--;
+
+            imageElement.src = images[imageIndex];
+
+        }
+    </script>
+</body>
+</html>
